@@ -11,10 +11,10 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./conf.d:/etc/nginx/conf.d:rw
-      - ./vhost.d:/etc/nginx/vhost.d:rw
-      - ./html:/usr/share/nginx/html:rw
-      - ./certs:/etc/nginx/certs:ro
+      - ./proxy/conf.d:/etc/nginx/conf.d:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - ./proxy/certs:/etc/nginx/certs:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
     restart: unless-stopped
